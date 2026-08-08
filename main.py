@@ -3,7 +3,7 @@ students = []   #空列表存储学生信息
 #加载学生
 def load_student():
     try:
-        f = open('D:/学生成绩.txt','r',encoding='UTF-8')
+        f = open('D:/students.txt','r',encoding='UTF-8')
         #确保程序运行结束后仍能重新读取文件
         content = f.read()
         parts = content.strip().split('\n')
@@ -36,7 +36,7 @@ def add_student():
             return
     score = int(input("请输入学生成绩："))
     students.append({"name":name,"score":score})
-    f = open("D:/学生成绩.txt",'a',encoding = 'UTF-8')
+    f = open("D:/students.txt",'a',encoding = 'UTF-8')
     f.write(f"name:{name},score:{score}")
     f.write('\n')   #一行一个学生信息
     f.close()
